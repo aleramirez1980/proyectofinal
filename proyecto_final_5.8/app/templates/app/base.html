@@ -24,25 +24,16 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Inicio' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Electricas' %}">Eléctricas</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Acusticas' %}">Acústicas</a></li>
-<<<<<<< HEAD
+                        <li class="nav-item"><a class="nav-link" href="">Amplificadores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Efectos</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Vender!</a></li>
                         {% if not request.user.is_authenticated %}
                             <a class="btn btn-primary" href="{% url 'Login' %}">Login</a>
+                            <a class="btn btn-secondary" href="{% url 'Registro' %}" role="button">Registro</a>
                         {% else %}
                             <a class="navbar-brand" href="#">{{request.user.username}}</a>
                             <a class="btn btn-primary" href="{% url 'Logout' %}">Logout</a>
                         {% endif %}
-=======
-                        <li class="nav-item"><a class="nav-link" href="">Amplificadores</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Efectos</a></li>
-                        <div class="container">
-                        <a class="btn btn-secondary" href="" role="button">Login</a>
-                        </div>
-                        <div class="container">
-                        <a class="btn btn-secondary" href="{% url 'Registro' %}" role="button">Registro</a>
-                        </div>
-                       
->>>>>>> marvin_01
 
                     </ul>
                 </div>

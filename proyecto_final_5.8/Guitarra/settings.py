@@ -27,11 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "app",
-<<<<<<< HEAD
-    'users'
-=======
+    'users',
     'registro'
->>>>>>> marvin_01
 ]
 
 MIDDLEWARE = [

@@ -20,9 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("app.urls")),
-<<<<<<< HEAD
+    path("registro/", include("registro.urls")),
     path('users/', include('users.urls'))
-=======
-    path("registro/", include("registro.urls"))
->>>>>>> marvin_01
 ]
