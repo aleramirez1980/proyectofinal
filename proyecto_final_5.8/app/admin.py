@@ -6,3 +6,5 @@ admin.site.register(Electrica)
 admin.site.register(Acustica)
 admin.site.register(Amplificador)
 admin.site.register(Efecto)
+
+#s
