@@ -1,0 +1,17 @@
+{% extends 'vbc/base.html' %}
+
+{% load static %}
+
+{% block title %} Listado Eléctricas {% endblock title %}
+
+{% block main %}
+
+    {% for electrica in Electricas %}
+            <p>Eléctrica: {{electrica.marca}}, {{electrica.modelo}}, {{electrica.serial}}
+            <a href="{% url "DetalleElectrica" electrica.pk %}">Ver</a>
+            |
+            <a href="{% url "EditarElectrica" electrica.pk %}">Editar</a>
+            |
+            <a href="{% url "BorrarElectrica" electrica.pk %}">Borrar</a>          
+    {% endfor %}
+{% endblock main %}
