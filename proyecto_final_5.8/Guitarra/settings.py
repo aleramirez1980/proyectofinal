@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "app",
     'users',
-    'registro'
+    'registro',
+    "vbc"
 ]
 
 MIDDLEWARE = [
