@@ -2,16 +2,69 @@
 
 {% load static %}
 
-{% block title %} Listado Eléctricas {% endblock title %}
+
 
 {% block main %}
 
+{% block title %} 
+
+    <div class="container-sm text-center">
+        <h2>Listado Eléctricas</h2> 
+    </div>
+
+{% endblock title %}
+
     {% for electrica in Electricas %}
-            <p>Eléctrica: {{electrica.marca}}, {{electrica.modelo}}, {{electrica.serial}}
-            <a href="{% url "DetalleElectrica" electrica.pk %}">Ver</a>
-            |
-            <a href="{% url "EditarElectrica" electrica.pk %}">Editar</a>
-            |
-            <a href="{% url "BorrarElectrica" electrica.pk %}">Borrar</a>          
+            
+            
+            <div class="container-md mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Eléctrica: {{electrica.marca}}, {{electrica.modelo}}</h5>
+                    </div>
+                    <div class="card-body">
+                      
+
+                      <div class="row">
+
+                        <div class="col-2">
+
+
+                    
+                            <figure class="figure">
+                                <img src="{%static 'images/img01.jpg'%}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                              </figure>
+
+                        </div>
+
+                        <div class="col-10">
+
+                            <h5 class="card-title"><p>Año:{{electrica.anio}}, Precio: {{electrica.precio}} <p></h5>
+                                <p class="card-text"><p>Descripción: {{electrica.descripcion}}<p></p>
+                                <a href="{% url "DetalleElectrica" electrica.pk %}" class="btn btn-primary">Ver</a>
+                                |
+                                <a href="{% url "EditarElectrica" electrica.pk %}" class="btn btn-primary">Editar</a>
+                                |
+                                <a href="{% url "BorrarElectrica" electrica.pk %}" class="btn btn-primary">Borrar</a>
+          
+
+
+                        </div>
+
+
+
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+
     {% endfor %}
+
+
+
+
 {% endblock main %}
+
+
