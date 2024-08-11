@@ -1,0 +1,19 @@
+{% extends 'vbc/base.html' %}
+
+{% load static %}
+
+{% block title %} Acústica Detalle {% endblock title %}
+
+{% block main %}
+
+    <p>Marca: <i>{{acustica.marca}}</i><p>
+    <p>Modelo: <i>{{acustica.modelo}}</i><p>
+    <p>Serial: <i>{{acustica.serial}}</i><p>
+    <p>Año: <i>{{acustica.anio}}</i><p>
+    <p>Precio: <i>{{acustica.precio}}</i><p>
+    <p>Descripción: <i>{{acustica.descripcion}}</i><p>
+    <p>
+        <a href="{% url "ListaAcusticas" %}">Regresar</a>
+    <p/>
+
+{% endblock main %}

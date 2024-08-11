@@ -1,0 +1,19 @@
+{% extends 'vbc/base.html' %}
+
+{% load static %}
+
+{% block title %} Efectos Detalle {% endblock title %}
+
+{% block main %}
+
+    <p>Marca: <i>{{efecto.marca}}</i><p>
+    <p>Modelo: <i>{{efecto.modelo}}</i><p>
+    <p>Serial: <i>{{efecto.serial}}</i><p>
+    <p>Año: <i>{{efecto.anio}}</i><p>
+    <p>Precio: <i>{{efecto.precio}}</i><p>
+    <p>Descripción: <i>{{efecto.descripcion}}</i><p>
+    <p>
+        <a href="{% url "ListaEfectos" %}">Regresar</a>
+    <p/>
+
+{% endblock main %}

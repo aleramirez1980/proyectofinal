@@ -2,13 +2,13 @@
 
 {% load static %}
 
-{% block title %} Borrar Eléctrica {% endblock title %}
+{% block title %} Borrar Amplificador {% endblock title %}
 
 {% block main %}
 
     <form action="" method="POST">
         {% csrf_token %}
-        Estas seguro que deseas borrar a esta guitarra {{electrica.marca}} - modelo {{electrica.modelo}} - serial {{electrica.serial}}?
+        Estas seguro que deseas borrar a este amplificador {{amplificador.marca}} - modelo {{amplificador.modelo}} - serial {{amplificador.serial}}?
         <input type="submit" value="Eliminar">
     </form>
 

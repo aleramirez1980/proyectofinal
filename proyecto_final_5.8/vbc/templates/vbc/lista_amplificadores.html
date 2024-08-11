@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Listado Amplificadores {% endblock title %}
+
+{% block main %}
+
+    {% for amplificador in Amplificadores %}
+            <p>Amplificador: {{amplificador.marca}}, {{amplificador.modelo}}, {{amplificador.serial}}
+            <a href="{% url "DetalleAmplificador" amplificador.pk %}">Ver</a>
+            |
+            <a href="{% url "EditarAmplificador" amplificador.pk %}">Editar</a>
+            |
+            <a href="{% url "BorrarAmplificador" amplificador.pk %}">Borrar</a>          
+    {% endfor %}
+{% endblock main %}

@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Listado Acústicas {% endblock title %}
+
+{% block main %}
+
+    {% for acustica in Acusticas %}
+            <p>Acústica: {{acustica.marca}}, {{acustica.modelo}}, {{acustica.serial}}
+            <a href="{% url "DetalleAcustica" acustica.pk %}">Ver</a>
+            |
+            <a href="{% url "EditarAcustica" acustica.pk %}">Editar</a>
+            |
+            <a href="{% url "BorrarAcustica" acustica.pk %}">Borrar</a>          
+    {% endfor %}
+{% endblock main %}

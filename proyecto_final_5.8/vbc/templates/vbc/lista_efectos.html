@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block title %} Listado Efectos {% endblock title %}
+
+{% block main %}
+
+    {% for efecto in Efectos %}
+            <p>Efecto: {{efecto.marca}}, {{efecto.modelo}}, {{efecto.serial}}
+            <a href="{% url "DetalleEfecto" efecto.pk %}">Ver</a>
+            |
+            <a href="{% url "EditarEfecto" efecto.pk %}">Editar</a>
+            |
+            <a href="{% url "BorrarEfecto" efecto.pk %}">Borrar</a>          
+    {% endfor %}
+{% endblock main %}

@@ -1,0 +1,20 @@
+{% extends 'vbc/base.html' %}
+
+{% load static %}
+
+{% block title %} Amplificador Detalle {% endblock title %}
+
+{% block main %}
+
+    <p>Marca: <i>{{amplificador.marca}}</i><p>
+    <p>Modelo: <i>{{amplificador.modelo}}</i><p>
+    <p>Potencia: <i>{{amplificador.modelo}}</i><p>
+    <p>Serial: <i>{{amplificador.serial}}</i><p>
+    <p>Año: <i>{{amplificador.anio}}</i><p>
+    <p>Precio: <i>{{amplificador.precio}}</i><p>
+    <p>Descripción: <i>{{amplificador.descripcion}}</i><p>
+    <p>
+        <a href="{% url "ListaAmplificadores" %}">Regresar</a>
+    <p/>
+
+{% endblock main %}
