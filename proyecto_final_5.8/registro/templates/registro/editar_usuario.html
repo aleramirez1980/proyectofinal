@@ -5,28 +5,7 @@
 {% block editar_usuario %}
 
 
-        {% if messages %}
 
-        <div class="container my-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 text-center">
-
-                        {% for message in messages %}
-                            <div class="alert alert-{{ message.tags }}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-               
-
-                
-                    
-                         <a class="btn btn-secondary" href="{% url 'Inicio' %}" role="button">Ir al inicio</a>
-                    
-                </div>
-            </div>
-        </div>
-
-        {% endif %}
    
        
         <div class="container my-5">

@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.views.generic.edit import UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from .forms import CustomUserChangeForm
 
 
@@ -29,29 +30,17 @@ def registro(request):
     return render(request, 'registro/registro.html', {'form': form })
 
 
-def registro_exitoso(request):
 
-    return render(request, 'registro/pantalla_registro.html')
-
-
-
-def edicion_exitosa(request):
-
-    return render(request, 'registro/pantalla_edicion.html')
-
-
-
-class RegisterSuccessView(TemplateView):
+class RegistroExitoso(TemplateView):
     
     template_name = 'registro/pantalla_registro.html'
-    
-    
+
 
 class ModificarUsuario(UpdateView):
     model = User
     form_class = CustomUserChangeForm
     template_name = 'registro/editar_usuario.html'
-    success_url = reverse_lazy('EditarUsuario') 
+    success_url = reverse_lazy('EdicionExitosa') 
     
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -60,3 +49,9 @@ class ModificarUsuario(UpdateView):
  
     def get_object(self, queryset=None):
         return self.request.user
+    
+    
+class EdicionExitosa(TemplateView):
+    
+    template_name = 'registro/pantalla_edicion.html'
+    
