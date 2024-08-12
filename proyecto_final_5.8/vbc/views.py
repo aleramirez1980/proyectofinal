@@ -2,6 +2,7 @@ from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 from app.models import Electrica
@@ -18,19 +19,19 @@ class ElectricaDetailView(DetailView):
     model = Electrica
     template_name = "vbc/electricas_detalle.html"
     
-class ElectricaCreateView(CreateView):
+class ElectricaCreateView(LoginRequiredMixin, CreateView):
     model = Electrica
     template_name = "vbc/electricas_crear.html"
     success_url = reverse_lazy("ListaElectricas")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
     
-class ElectricaUpdateView(UpdateView):
+class ElectricaUpdateView(LoginRequiredMixin, UpdateView):
     model = Electrica
     template_name = "vbc/electricas_editar.html"
     success_url = reverse_lazy("ListaElectricas")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
     
-class ElectricaDeleteView(DeleteView):
+class ElectricaDeleteView(LoginRequiredMixin, DeleteView):
     model = Electrica
     template_name = "vbc/electricas_borrar.html"
     success_url = reverse_lazy("ListaElectricas")
@@ -44,19 +45,19 @@ class AcusticaDetailView(DetailView):
     model = Acustica
     template_name = "vbc/acusticas_detalle.html"
     
-class AcusticaCreateView(CreateView):
+class AcusticaCreateView(LoginRequiredMixin, CreateView):
     model = Acustica
     template_name = "vbc/acusticas_crear.html"
     success_url = reverse_lazy("ListaAcusticas")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
     
-class AcusticaUpdateView(UpdateView):
+class AcusticaUpdateView(LoginRequiredMixin, UpdateView):
     model = Acustica
     template_name = "vbc/acusticas_editar.html"
     success_url = reverse_lazy("ListaAcusticas")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
     
-class AcusticaDeleteView(DeleteView):
+class AcusticaDeleteView(LoginRequiredMixin, DeleteView):
     model = Acustica
     template_name = "vbc/acusticas_borrar.html"
     success_url = reverse_lazy("ListaAcusticas")
@@ -70,19 +71,19 @@ class AmplificadorDetailView(DetailView):
     model = Amplificador
     template_name = "vbc/amplificadores_detalle.html"
     
-class AmplificadorCreateView(CreateView):
+class AmplificadorCreateView(LoginRequiredMixin, CreateView):
     model = Amplificador
     template_name = "vbc/amplificadores_crear.html"
     success_url = reverse_lazy("ListaAmplificadores")
     fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion"]
     
-class AmplificadorUpdateView(UpdateView):
+class AmplificadorUpdateView(LoginRequiredMixin, UpdateView):
     model = Amplificador
     template_name = "vbc/amplificadores_editar.html"
     success_url = reverse_lazy("ListaAmplificadores")
     fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion"] 
     
-class AmplificadorDeleteView(DeleteView):
+class AmplificadorDeleteView(LoginRequiredMixin, DeleteView):
     model = Amplificador
     template_name = "vbc/amplificadores_borrar.html"
     success_url = reverse_lazy("ListaAmplificadores")
@@ -96,19 +97,19 @@ class EfectoDetailView(DetailView):
     model = Efecto
     template_name = "vbc/efectos_detalle.html"
     
-class EfectoCreateView(CreateView):
+class EfectoCreateView(LoginRequiredMixin, CreateView):
     model = Efecto
     template_name = "vbc/efectos_crear.html"
     success_url = reverse_lazy("ListaEfectos")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
     
-class EfectoUpdateView(UpdateView):
+class EfectoUpdateView(LoginRequiredMixin, UpdateView):
     model = Efecto
     template_name = "vbc/efectos_editar.html"
     success_url = reverse_lazy("ListaEfectos")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
     
-class EfectoDeleteView(DeleteView):
+class EfectoDeleteView(LoginRequiredMixin, DeleteView):
     model = Efecto
     template_name = "vbc/efectos_borrar.html"
     success_url = reverse_lazy("ListaEfectos")
