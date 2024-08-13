@@ -2,19 +2,52 @@
 
 {% load static %}
 
-{% block title %} Amplificador Detalle {% endblock title %}
+
 
 {% block main %}
 
-    <p>Marca: <i>{{amplificador.marca}}</i><p>
-    <p>Modelo: <i>{{amplificador.modelo}}</i><p>
-    <p>Potencia: <i>{{amplificador.modelo}}</i><p>
-    <p>Serial: <i>{{amplificador.serial}}</i><p>
-    <p>Año: <i>{{amplificador.anio}}</i><p>
-    <p>Precio: <i>{{amplificador.precio}}</i><p>
-    <p>Descripción: <i>{{amplificador.descripcion}}</i><p>
-    <p>
-        <a href="{% url "ListaAmplificadores" %}">Regresar</a>
-    <p/>
+
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+
+         
+
+            <div class="card" style="width: 18rem;">
+
+               
+                <h5 class= 'text-center'>Amplificador - Detalles</5>
+
+
+                    <figure class="figure text-center" >
+                        <img src="{%static 'images/img01.jpg'%}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                    </figure>
+                <div class="card-body">
+                    <h5 class="card-title"><p>Marca:{{amplificador.marca}}<p></h5>
+                    <p>Descripción: <i>{{amplificador.descripcion}}</i><p>  
+                        
+                </div>
+
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p>Modelo: <i>{{amplificador.modelo}}</i><p></li>
+                <li class="list-group-item"><p>Serial: <i>{{amplificador.serial}}</i><p></li>
+                <li class="list-group-item"><p>Año: <i>{{amplificador.anio}}</i><p></li>
+                <li class="list-group-item"><p>Precio: <i>{{amplificador.precio}}</i><p></li>
+                <li class="list-group-item"><p>Potencia: <i>{{amplificador.potencia}}</i><p></li>
+            
+
+                </ul>
+
+                <div class="card-body">
+
+                    <a href="{% url "ListaAmplificadores" %}">Regresar</a>
+                   
+                
+                </div>
+            </div>
+        </div>    
+    </div>
+
+
 
 {% endblock main %}

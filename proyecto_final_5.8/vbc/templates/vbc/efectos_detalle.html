@@ -2,18 +2,52 @@
 
 {% load static %}
 
-{% block title %} Efectos Detalle {% endblock title %}
+
 
 {% block main %}
 
-    <p>Marca: <i>{{efecto.marca}}</i><p>
-    <p>Modelo: <i>{{efecto.modelo}}</i><p>
-    <p>Serial: <i>{{efecto.serial}}</i><p>
-    <p>Año: <i>{{efecto.anio}}</i><p>
-    <p>Precio: <i>{{efecto.precio}}</i><p>
-    <p>Descripción: <i>{{efecto.descripcion}}</i><p>
-    <p>
-        <a href="{% url "ListaEfectos" %}">Regresar</a>
-    <p/>
+
+
+    
+    <div class="container my-5">
+        <div class="row justify-content-center">
+
+         
+
+            <div class="card" style="width: 18rem;">
+
+               
+                <h5 class= 'text-center'>Efectos - Detalles</5>
+
+
+                    <figure class="figure text-center" >
+                        <img src="{%static 'images/img01.jpg'%}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                    </figure>
+                <div class="card-body">
+                    <h5 class="card-title"><p>Marca:{{efecto.marca}}<p></h5>
+                    <p>Descripción: <i>{{efecto.descripcion}}</i><p>  
+                        
+                </div>
+
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p>Modelo: <i>{{efecto.modelo}}</i><p></li>
+                <li class="list-group-item"><p>Serial: <i>{{efecto.serial}}</i><p></li>
+                <li class="list-group-item"><p>Año: <i>{{efecto.anio}}</i><p></li>
+                <li class="list-group-item"><p>Precio: <i>{{efecto.precio}}</i><p></li>
+                
+            
+
+                </ul>
+
+                <div class="card-body">
+
+                    <a href="{% url "ListaEfectos" %}">Regresar</a>
+                   
+                
+                </div>
+            </div>
+        </div>    
+    </div>
+
 
 {% endblock main %}

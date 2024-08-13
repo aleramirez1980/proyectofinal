@@ -15,10 +15,17 @@
         {% endif %}
     </div>
 
+
+   <div class="container-sm text-center">
+        <div class='row'>
+        </div>
+   </div>
   
 {% endblock title %}
 
-    {% for electrica in Electricas %}
+{% if Electricas %} 
+
+        {% for electrica in Electricas %}
             
             
             <div class="container-md mb-4">
@@ -68,6 +75,22 @@
     {% endfor %}
 
 
+{% else %}
+
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+      <div class="col-lg-6">
+          
+          <h2>No existe ninguna guitarra eléctrica registrada aún!  </h2>
+
+      
+      </div>
+  </div>
+</div>
+
+
+{% endif %}
 
 
 {% endblock main %}

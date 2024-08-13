@@ -2,14 +2,26 @@
 
 {% load static %}
 
-{% block title %} Crear Guitarra Eléctrica {% endblock title %}
 
 {% block main %}
 
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Crear">
-</form>
+
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            
+            <h2>Crear Guitarra Eléctrica  </h2>
+
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </form>
+        
+        </div>
+    </div>
+</div>
 
 {% endblock main %}

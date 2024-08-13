@@ -2,18 +2,46 @@
 
 {% load static %}
 
-{% block title %} Acústica Detalle {% endblock title %}
-
 {% block main %}
 
-    <p>Marca: <i>{{acustica.marca}}</i><p>
-    <p>Modelo: <i>{{acustica.modelo}}</i><p>
-    <p>Serial: <i>{{acustica.serial}}</i><p>
-    <p>Año: <i>{{acustica.anio}}</i><p>
-    <p>Precio: <i>{{acustica.precio}}</i><p>
-    <p>Descripción: <i>{{acustica.descripcion}}</i><p>
-    <p>
-        <a href="{% url "ListaAcusticas" %}">Regresar</a>
-    <p/>
+{% block title %} {% endblock title %}
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+
+         
+
+            <div class="card" style="width: 18rem;">
+
+               
+                <h5 class= 'text-center'>Acústica Detalle</5>
+
+
+                    <figure class="figure text-center" >
+                        <img src="{%static 'images/img01.jpg'%}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                    </figure>
+                <div class="card-body">
+                    <h5 class="card-title"><p>Marca:{{acustica.marca}}<p></h5>
+                    <p>Descripción: <i>{{acustica.descripcion}}</i><p>  
+                        
+                </div>
+
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p>Modelo: <i>{{acustica.modelo}}</i><p></li>
+                <li class="list-group-item"><p>Serial: <i>{{acustica.serial}}</i><p></li>
+                <li class="list-group-item"><p>Año: <i>{{acustica.anio}}</i><p></li>
+                <li class="list-group-item"><p>Precio: <i>{{acustica.precio}}</i><p></li>
+            
+
+                </ul>
+
+                <div class="card-body">
+
+                    <a href="{% url "ListaAcusticas" %}">Regresar</a>
+                
+                </div>
+            </div>
+        </div>    
+    </div>
 
 {% endblock main %}
