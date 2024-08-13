@@ -5,10 +5,11 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-from app.models import Electrica
-from app.models import Acustica
-from app.models import Amplificador
-from app.models import Efecto
+
+from vbc.models import Electrica
+from vbc.models import Acustica
+from vbc.models import Amplificador
+from vbc.models import Efecto
 
 class ElectricaListView(ListView):
     model = Electrica
@@ -18,18 +19,20 @@ class ElectricaListView(ListView):
 class ElectricaDetailView(DetailView):
     model = Electrica
     template_name = "vbc/electricas_detalle.html"
-    
+
+# Crear registros    
 class ElectricaCreateView(LoginRequiredMixin, CreateView):
     model = Electrica
     template_name = "vbc/electricas_crear.html"
     success_url = reverse_lazy("ListaElectricas")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen" ]
+    
     
 class ElectricaUpdateView(LoginRequiredMixin, UpdateView):
     model = Electrica
     template_name = "vbc/electricas_editar.html"
     success_url = reverse_lazy("ListaElectricas")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"] 
     
 class ElectricaDeleteView(LoginRequiredMixin, DeleteView):
     model = Electrica
@@ -45,17 +48,19 @@ class AcusticaDetailView(DetailView):
     model = Acustica
     template_name = "vbc/acusticas_detalle.html"
     
+    
+# Crear registros
 class AcusticaCreateView(LoginRequiredMixin, CreateView):
     model = Acustica
     template_name = "vbc/acusticas_crear.html"
     success_url = reverse_lazy("ListaAcusticas")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"]
     
 class AcusticaUpdateView(LoginRequiredMixin, UpdateView):
     model = Acustica
     template_name = "vbc/acusticas_editar.html"
     success_url = reverse_lazy("ListaAcusticas")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"] 
     
 class AcusticaDeleteView(LoginRequiredMixin, DeleteView):
     model = Acustica
@@ -71,17 +76,19 @@ class AmplificadorDetailView(DetailView):
     model = Amplificador
     template_name = "vbc/amplificadores_detalle.html"
     
+    
+# Crear registros
 class AmplificadorCreateView(LoginRequiredMixin, CreateView):
     model = Amplificador
     template_name = "vbc/amplificadores_crear.html"
     success_url = reverse_lazy("ListaAmplificadores")
-    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion"]
+    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "imagen"]
     
 class AmplificadorUpdateView(LoginRequiredMixin, UpdateView):
     model = Amplificador
     template_name = "vbc/amplificadores_editar.html"
     success_url = reverse_lazy("ListaAmplificadores")
-    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion"] 
+    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "imagen"] 
     
 class AmplificadorDeleteView(LoginRequiredMixin, DeleteView):
     model = Amplificador
@@ -97,17 +104,18 @@ class EfectoDetailView(DetailView):
     model = Efecto
     template_name = "vbc/efectos_detalle.html"
     
+# Crear registros
 class EfectoCreateView(LoginRequiredMixin, CreateView):
     model = Efecto
     template_name = "vbc/efectos_crear.html"
     success_url = reverse_lazy("ListaEfectos")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"]
     
 class EfectoUpdateView(LoginRequiredMixin, UpdateView):
     model = Efecto
     template_name = "vbc/efectos_editar.html"
     success_url = reverse_lazy("ListaEfectos")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"]  
     
 class EfectoDeleteView(LoginRequiredMixin, DeleteView):
     model = Efecto

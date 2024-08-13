@@ -39,7 +39,7 @@
 
                     
                             <figure class="figure">
-                                <img src="{%static 'images/img01.jpg'%}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                                <img src="{{ efecto.imagen.url }}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
                               </figure>
 
                         </div>
@@ -47,7 +47,7 @@
                         <div class="col-10">
 
                             <h5 class="card-title"><p>Año:{{efecto.anio}}, Precio: {{efecto.precio}} <p></h5>
-                                <p class="card-text"><p>Descripción: {{efecto.descripcion}}<p></p>
+                              
                                 <a href="{% url "DetalleEfecto" efecto.pk %}" class="btn btn-primary">Ver</a>
                                 {% if user.is_authenticated %}
                                   |
