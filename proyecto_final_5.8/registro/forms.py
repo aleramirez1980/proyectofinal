@@ -8,6 +8,7 @@ class RegistroUsuarioForm(UserCreationForm):
     last_name = forms.CharField(label='Apellido', required=True)
     username = forms.CharField(label='Usuario', required=True)
     email = forms.EmailField(required=True)
+    #imagen = forms.ImageField(label="Avatar", required=False)
     password1=forms.CharField(label='Contraseña', widget=forms.PasswordInput)
     password2=forms.CharField(label='Repite la contraseña', widget=forms.PasswordInput)
     
@@ -25,9 +26,9 @@ class CustomUserChangeForm(UserChangeForm):
     last_name = forms.CharField(label='Apellido', required=True)
     username = forms.CharField(label='Usuario', required=True)
     email = forms.EmailField(required=True)
-    password1=forms.CharField(label='Contraseña', widget=forms.PasswordInput)
-    password2=forms.CharField(label='Repite la contraseña', widget=forms.PasswordInput)
-    
+    password1 = forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Repite la contraseña', widget=forms.PasswordInput)
+    #imagen = forms.ImageField(label="Avatar", required=False)
     
     class Meta:
         model = User
