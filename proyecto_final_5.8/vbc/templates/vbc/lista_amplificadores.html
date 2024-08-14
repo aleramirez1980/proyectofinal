@@ -47,13 +47,14 @@
                             <h5 class="card-title"><p>Año:{{amplificador.anio}}, Precio: {{amplificador.precio}} <p></h5>
                                 
                                 <a href="{% url "DetalleAmplificador" amplificador.pk %}" class="btn btn-primary">Ver</a>
-                                {% if user.is_authenticated %}
+                                {% if user.is_authenticated and user == amplificador.creado_por %}
                                   |
                                   <a href="{% url "EditarAmplificador" amplificador.pk %}" class="btn btn-primary">Editar</a>
                                   |                                                               
                                   <a href="{% url "BorrarAmplificador" amplificador.pk %}" class="btn btn-primary">Borrar</a>
                                 {% endif %}
 
+                                <p>Publicada por: <i>{{amplificador.creado_por}} el {{amplificador.fecha_hora}}</i><p>
 
                         </div>
 

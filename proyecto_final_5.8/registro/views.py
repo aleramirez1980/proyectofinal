@@ -8,7 +8,8 @@ from django.contrib.auth.models import User
 from django.views.generic.edit import UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserChangeForm
+from .forms import ModificacionUsuarioForm
+from django.contrib.auth.views import PasswordChangeView
 
 
 
@@ -38,7 +39,7 @@ class RegistroExitoso(TemplateView):
 
 class ModificarUsuario(UpdateView):
     model = User
-    form_class = CustomUserChangeForm
+    form_class = ModificacionUsuarioForm
     template_name = 'registro/editar_usuario.html'
     success_url = reverse_lazy('EdicionExitosa') 
     
@@ -54,4 +55,19 @@ class ModificarUsuario(UpdateView):
 class EdicionExitosa(TemplateView):
     
     template_name = 'registro/pantalla_edicion.html'
+    
+    
+
+
+class CambioContrasena(PasswordChangeView):
+    template_name = 'registro/cambio_contrasena.html'
+    success_url = reverse_lazy('CambioContrasenaExitoso')
+    
+    
+    
+    
+class CambioClave(TemplateView):
+    
+    template_name = 'registro/pantalla_clave.html'
+    
     

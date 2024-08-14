@@ -49,13 +49,14 @@
                             <h5 class="card-title"><p>Año:{{efecto.anio}}, Precio: {{efecto.precio}} <p></h5>
                               
                                 <a href="{% url "DetalleEfecto" efecto.pk %}" class="btn btn-primary">Ver</a>
-                                {% if user.is_authenticated %}
+                                {% if user.is_authenticated and user == efecto.creado_por %}
                                   |
                                   <a href="{% url "EditarEfecto" efecto.pk %}" class="btn btn-primary">Editar</a>
                                   |                                                               
                                   <a href="{% url "BorrarEfecto" efecto.pk %}" class="btn btn-primary">Borrar</a>
                                 {% endif %}
 
+                                <p>Publicada por: <i>{{efecto.creado_por}} el {{efecto.fecha_hora}}</i><p>
 
                         </div>
 

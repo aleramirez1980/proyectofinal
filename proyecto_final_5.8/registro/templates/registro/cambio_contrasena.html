@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block editar_usuario %}
+{% block editar_contrasena %}
 
 
 
@@ -12,7 +12,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     
-                    <h2>Editar Perfil</h2>
+                    <h2>Editar Contraseña</h2>
 
                         <form method="POST">
                             {% csrf_token %}
@@ -20,13 +20,6 @@
                             <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                         </form>
                 
-
-                        <h4>Deseas cambiar tu contraseña?</h4>
-
-                        <a href="{% url 'CambiarContrasena' %}" class="btn btn-secondary">Cambiar</a>
-                        
-
-
                 </div>
             </div>
         </div>
@@ -39,5 +32,5 @@
 
 
 
-{% endblock editar_usuario %}
+{% endblock editar_contrasena %}
 

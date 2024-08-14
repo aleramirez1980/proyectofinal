@@ -3,6 +3,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
 
 
 
@@ -26,6 +27,11 @@ class ElectricaCreateView(LoginRequiredMixin, CreateView):
     template_name = "vbc/electricas_crear.html"
     success_url = reverse_lazy("ListaElectricas")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen" ]
+    
+    def form_valid(self, form):
+        form.instance.creado_por = self.request.user 
+        return super().form_valid(form)
+    
     
     
 class ElectricaUpdateView(LoginRequiredMixin, UpdateView):
@@ -56,6 +62,10 @@ class AcusticaCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy("ListaAcusticas")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"]
     
+    def form_valid(self, form):
+        form.instance.creado_por = self.request.user 
+        return super().form_valid(form)
+    
 class AcusticaUpdateView(LoginRequiredMixin, UpdateView):
     model = Acustica
     template_name = "vbc/acusticas_editar.html"
@@ -84,6 +94,10 @@ class AmplificadorCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy("ListaAmplificadores")
     fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "imagen"]
     
+    def form_valid(self, form):
+        form.instance.creado_por = self.request.user 
+        return super().form_valid(form)
+    
 class AmplificadorUpdateView(LoginRequiredMixin, UpdateView):
     model = Amplificador
     template_name = "vbc/amplificadores_editar.html"
@@ -110,6 +124,10 @@ class EfectoCreateView(LoginRequiredMixin, CreateView):
     template_name = "vbc/efectos_crear.html"
     success_url = reverse_lazy("ListaEfectos")
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"]
+    
+    def form_valid(self, form):
+        form.instance.creado_por = self.request.user 
+        return super().form_valid(form)
     
 class EfectoUpdateView(LoginRequiredMixin, UpdateView):
     model = Efecto

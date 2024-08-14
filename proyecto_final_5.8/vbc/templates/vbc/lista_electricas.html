@@ -50,15 +50,24 @@
 
                         <div class="col-10">
 
-                            <h5 class="card-title"><p>Año:{{electrica.anio}}, Precio: {{electrica.precio}} <p></h5>
+                            <h5 class="card-title"><p>Año:{{electrica.anio}}, Precio: {{electrica.precio}} <p>
+                              
+                            </h5>
                               
                                 <a href="{% url "DetalleElectrica" electrica.pk %}" class="btn btn-primary">Ver</a>
-                                {% if user.is_authenticated %}
+                                {% if user.is_authenticated and user == electrica.creado_por %}
                                   |
                                   <a href="{% url "EditarElectrica" electrica.pk %}" class="btn btn-primary">Editar</a>
                                   |                                                               
                                   <a href="{% url "BorrarElectrica" electrica.pk %}" class="btn btn-primary">Borrar</a>
                                 {% endif %}
+
+                                <p>Publicada por: <i>{{electrica.creado_por}} el {{electrica.fecha_hora}}</i><p>
+
+
+
+
+                                 
 
 
                         </div>
