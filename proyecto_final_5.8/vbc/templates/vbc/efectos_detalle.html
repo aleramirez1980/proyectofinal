@@ -21,7 +21,7 @@
 
 
                     <figure class="figure text-center" >
-                        <img src="{%static 'images/img01.jpg'%}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                        <img src="{{ efecto.imagen.url }}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
                     </figure>
                 <div class="card-body">
                     <h5 class="card-title"><p>Marca:{{efecto.marca}}<p></h5>
@@ -34,7 +34,7 @@
                 <li class="list-group-item"><p>Serial: <i>{{efecto.serial}}</i><p></li>
                 <li class="list-group-item"><p>Año: <i>{{efecto.anio}}</i><p></li>
                 <li class="list-group-item"><p>Precio: <i>{{efecto.precio}}</i><p></li>
-                
+                <li class="list-group-item"><p>Publicada por: <i>{{efecto.creado_por}} el {{efecto.fecha_hora}}</i><p></li>
             
 
                 </ul>

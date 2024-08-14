@@ -20,7 +20,7 @@
 
 
                     <figure class="figure text-center" >
-                        <img src="{%static 'images/img01.jpg'%}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                        <img src="{{ amplificador.imagen.url }}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
                     </figure>
                 <div class="card-body">
                     <h5 class="card-title"><p>Marca:{{amplificador.marca}}<p></h5>
@@ -34,6 +34,7 @@
                 <li class="list-group-item"><p>Año: <i>{{amplificador.anio}}</i><p></li>
                 <li class="list-group-item"><p>Precio: <i>{{amplificador.precio}}</i><p></li>
                 <li class="list-group-item"><p>Potencia: <i>{{amplificador.potencia}}</i><p></li>
+                <li class="list-group-item"><p>Publicada por: <i>{{amplificador.creado_por}} el {{amplificador.fecha_hora}}</i><p></li>
             
 
                 </ul>

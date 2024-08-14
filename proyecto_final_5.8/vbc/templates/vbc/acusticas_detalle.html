@@ -18,7 +18,7 @@
 
 
                     <figure class="figure text-center" >
-                        <img src="{%static 'images/img01.jpg'%}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                        <img src="{{ acustica.imagen.url }}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
                     </figure>
                 <div class="card-body">
                     <h5 class="card-title"><p>Marca:{{acustica.marca}}<p></h5>
@@ -31,6 +31,7 @@
                 <li class="list-group-item"><p>Serial: <i>{{acustica.serial}}</i><p></li>
                 <li class="list-group-item"><p>Año: <i>{{acustica.anio}}</i><p></li>
                 <li class="list-group-item"><p>Precio: <i>{{acustica.precio}}</i><p></li>
+                <li class="list-group-item"><p>Publicada por: <i>{{acustica.creado_por}} el {{acustica.fecha_hora}}</i><p></li>
             
 
                 </ul>
