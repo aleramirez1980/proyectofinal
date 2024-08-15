@@ -15,3 +15,5 @@ Desde VSC, se deberá abrir el proyecto desde “Clone Git Repository…”. Ah�
 
 Video explicativo
 https://youtu.be/4pUGSbfeiaQ
+Test:
+https://docs.google.com/spreadsheets/d/18HH4DTjexYJeiA6Z5z68jMcLFHuD4s5yORbQqqJB7Yg/edit?gid=725559927#gid=725559927
