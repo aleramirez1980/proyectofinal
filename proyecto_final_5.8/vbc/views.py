@@ -23,13 +23,13 @@ class ElectricaCreateView(LoginRequiredMixin, CreateView):
     model = Electrica
     template_name = "vbc/electricas_crear.html"
     success_url = reverse_lazy("ListaElectricas")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"]
     
 class ElectricaUpdateView(LoginRequiredMixin, UpdateView):
     model = Electrica
     template_name = "vbc/electricas_editar.html"
     success_url = reverse_lazy("ListaElectricas")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"] 
     
 class ElectricaDeleteView(LoginRequiredMixin, DeleteView):
     model = Electrica
@@ -49,13 +49,13 @@ class AcusticaCreateView(LoginRequiredMixin, CreateView):
     model = Acustica
     template_name = "vbc/acusticas_crear.html"
     success_url = reverse_lazy("ListaAcusticas")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"]
     
 class AcusticaUpdateView(LoginRequiredMixin, UpdateView):
     model = Acustica
     template_name = "vbc/acusticas_editar.html"
     success_url = reverse_lazy("ListaAcusticas")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"] 
     
 class AcusticaDeleteView(LoginRequiredMixin, DeleteView):
     model = Acustica
@@ -75,13 +75,13 @@ class AmplificadorCreateView(LoginRequiredMixin, CreateView):
     model = Amplificador
     template_name = "vbc/amplificadores_crear.html"
     success_url = reverse_lazy("ListaAmplificadores")
-    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion"]
+    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "email_contacto"]
     
 class AmplificadorUpdateView(LoginRequiredMixin, UpdateView):
     model = Amplificador
     template_name = "vbc/amplificadores_editar.html"
     success_url = reverse_lazy("ListaAmplificadores")
-    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion"] 
+    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "email_contacto"] 
     
 class AmplificadorDeleteView(LoginRequiredMixin, DeleteView):
     model = Amplificador
@@ -101,13 +101,13 @@ class EfectoCreateView(LoginRequiredMixin, CreateView):
     model = Efecto
     template_name = "vbc/efectos_crear.html"
     success_url = reverse_lazy("ListaEfectos")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"]
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"]
     
 class EfectoUpdateView(LoginRequiredMixin, UpdateView):
     model = Efecto
     template_name = "vbc/efectos_editar.html"
     success_url = reverse_lazy("ListaEfectos")
-    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion"] 
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"] 
     
 class EfectoDeleteView(LoginRequiredMixin, DeleteView):
     model = Efecto
