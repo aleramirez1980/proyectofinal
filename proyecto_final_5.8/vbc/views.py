@@ -26,6 +26,7 @@ class ElectricaCreateView(LoginRequiredMixin, CreateView):
     model = Electrica
     template_name = "vbc/electricas_crear.html"
     success_url = reverse_lazy("ListaElectricas")
+<<<<<<< HEAD
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen" ]
     
     def form_valid(self, form):
@@ -33,12 +34,19 @@ class ElectricaCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
     
     
+=======
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"]
+>>>>>>> rama_miercoles_nico
     
 class ElectricaUpdateView(LoginRequiredMixin, UpdateView):
     model = Electrica
     template_name = "vbc/electricas_editar.html"
     success_url = reverse_lazy("ListaElectricas")
+<<<<<<< HEAD
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"] 
+=======
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"] 
+>>>>>>> rama_miercoles_nico
     
 class ElectricaDeleteView(LoginRequiredMixin, DeleteView):
     model = Electrica
@@ -60,17 +68,25 @@ class AcusticaCreateView(LoginRequiredMixin, CreateView):
     model = Acustica
     template_name = "vbc/acusticas_crear.html"
     success_url = reverse_lazy("ListaAcusticas")
+<<<<<<< HEAD
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"]
     
     def form_valid(self, form):
         form.instance.creado_por = self.request.user 
         return super().form_valid(form)
+=======
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"]
+>>>>>>> rama_miercoles_nico
     
 class AcusticaUpdateView(LoginRequiredMixin, UpdateView):
     model = Acustica
     template_name = "vbc/acusticas_editar.html"
     success_url = reverse_lazy("ListaAcusticas")
+<<<<<<< HEAD
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"] 
+=======
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"] 
+>>>>>>> rama_miercoles_nico
     
 class AcusticaDeleteView(LoginRequiredMixin, DeleteView):
     model = Acustica
@@ -92,17 +108,25 @@ class AmplificadorCreateView(LoginRequiredMixin, CreateView):
     model = Amplificador
     template_name = "vbc/amplificadores_crear.html"
     success_url = reverse_lazy("ListaAmplificadores")
+<<<<<<< HEAD
     fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "imagen"]
     
     def form_valid(self, form):
         form.instance.creado_por = self.request.user 
         return super().form_valid(form)
+=======
+    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "email_contacto"]
+>>>>>>> rama_miercoles_nico
     
 class AmplificadorUpdateView(LoginRequiredMixin, UpdateView):
     model = Amplificador
     template_name = "vbc/amplificadores_editar.html"
     success_url = reverse_lazy("ListaAmplificadores")
+<<<<<<< HEAD
     fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "imagen"] 
+=======
+    fields = ["marca", "modelo", "potencia", "serial", "anio", "precio", "descripcion", "email_contacto"] 
+>>>>>>> rama_miercoles_nico
     
 class AmplificadorDeleteView(LoginRequiredMixin, DeleteView):
     model = Amplificador
@@ -123,17 +147,25 @@ class EfectoCreateView(LoginRequiredMixin, CreateView):
     model = Efecto
     template_name = "vbc/efectos_crear.html"
     success_url = reverse_lazy("ListaEfectos")
+<<<<<<< HEAD
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"]
     
     def form_valid(self, form):
         form.instance.creado_por = self.request.user 
         return super().form_valid(form)
+=======
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"]
+>>>>>>> rama_miercoles_nico
     
 class EfectoUpdateView(LoginRequiredMixin, UpdateView):
     model = Efecto
     template_name = "vbc/efectos_editar.html"
     success_url = reverse_lazy("ListaEfectos")
+<<<<<<< HEAD
     fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "imagen"]  
+=======
+    fields = ["marca", "modelo", "serial", "anio", "precio", "descripcion", "email_contacto"] 
+>>>>>>> rama_miercoles_nico
     
 class EfectoDeleteView(LoginRequiredMixin, DeleteView):
     model = Efecto
