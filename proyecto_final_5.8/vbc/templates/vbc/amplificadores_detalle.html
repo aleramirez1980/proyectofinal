@@ -6,7 +6,6 @@
 
 {% block main %}
 
-<<<<<<< HEAD
 
 
     <div class="container my-5">
@@ -35,6 +34,7 @@
                 <li class="list-group-item"><p>Año: <i>{{amplificador.anio}}</i><p></li>
                 <li class="list-group-item"><p>Precio: <i>{{amplificador.precio}}</i><p></li>
                 <li class="list-group-item"><p>Potencia: <i>{{amplificador.potencia}}</i><p></li>
+                <li class="list-group-item"><p>Email contacto: <i>{{amplificador.email_contacto}}</i><p></li>
                 <li class="list-group-item"><p>Publicada por: <i>{{amplificador.creado_por}} el {{amplificador.fecha_hora}}</i><p></li>
             
 
@@ -51,18 +51,5 @@
     </div>
 
 
-=======
-    <p>Marca: <i>{{amplificador.marca}}</i><p>
-    <p>Modelo: <i>{{amplificador.modelo}}</i><p>
-    <p>Potencia: <i>{{amplificador.modelo}}</i><p>
-    <p>Serial: <i>{{amplificador.serial}}</i><p>
-    <p>Año: <i>{{amplificador.anio}}</i><p>
-    <p>Precio: <i>{{amplificador.precio}}</i><p>
-    <p>Descripción: <i>{{amplificador.descripcion}}</i><p>
-    <p>Email de contacto: <i>{{amplificador.email_contacto}}</i><p>
-    <p>
-        <a href="{% url "ListaAmplificadores" %}">Regresar</a>
-    <p/>
->>>>>>> rama_miercoles_nico
 
 {% endblock main %}

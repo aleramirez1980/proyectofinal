@@ -46,7 +46,7 @@
 
                         <div class="col-10">
 
-                            <h5 class="card-title"><p>Año:{{acustica.anio}}, Precio: {{acustica.precio}} <p></h5>
+                            <h5 class="card-title"><p>Año:{{acustica.anio}}, Precio: {{acustica.precio}}<p></h5>
                                 
                                 <a href="{% url "DetalleAcustica" acustica.pk %}" class="btn btn-primary">Ver</a>
                                 {% if user.is_authenticated and user == acustica.creado_por %}

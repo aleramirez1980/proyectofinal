@@ -4,7 +4,6 @@
 
 {% block main %}
 
-<<<<<<< HEAD
 {% block title %} {% endblock title %}
 
     <div class="container my-5">
@@ -32,6 +31,7 @@
                 <li class="list-group-item"><p>Serial: <i>{{acustica.serial}}</i><p></li>
                 <li class="list-group-item"><p>Año: <i>{{acustica.anio}}</i><p></li>
                 <li class="list-group-item"><p>Precio: <i>{{acustica.precio}}</i><p></li>
+                <li class="list-group-item"><p>Email contacto: <i>{{acustica.email_contacto}}</i><p></li>
                 <li class="list-group-item"><p>Publicada por: <i>{{acustica.creado_por}} el {{acustica.fecha_hora}}</i><p></li>
             
 
@@ -45,17 +45,5 @@
             </div>
         </div>    
     </div>
-=======
-    <p>Marca: <i>{{acustica.marca}}</i><p>
-    <p>Modelo: <i>{{acustica.modelo}}</i><p>
-    <p>Serial: <i>{{acustica.serial}}</i><p>
-    <p>Año: <i>{{acustica.anio}}</i><p>
-    <p>Precio: <i>{{acustica.precio}}</i><p>
-    <p>Descripción: <i>{{acustica.descripcion}}</i><p>
-    <p>Email de contacto: <i>{{acustica.email_contacto}}</i><p>
-    <p>
-        <a href="{% url "ListaAcusticas" %}">Regresar</a>
-    <p/>
->>>>>>> rama_miercoles_nico
 
 {% endblock main %}

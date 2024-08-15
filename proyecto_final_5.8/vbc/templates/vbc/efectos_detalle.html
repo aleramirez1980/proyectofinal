@@ -6,7 +6,6 @@
 
 {% block main %}
 
-<<<<<<< HEAD
 
 
     
@@ -35,6 +34,7 @@
                 <li class="list-group-item"><p>Serial: <i>{{efecto.serial}}</i><p></li>
                 <li class="list-group-item"><p>Año: <i>{{efecto.anio}}</i><p></li>
                 <li class="list-group-item"><p>Precio: <i>{{efecto.precio}}</i><p></li>
+                <li class="list-group-item"><p>Email contacto: <i>{{efecto.email_contacto}}</i><p></li>
                 <li class="list-group-item"><p>Publicada por: <i>{{efecto.creado_por}} el {{efecto.fecha_hora}}</i><p></li>
             
 
@@ -50,17 +50,5 @@
         </div>    
     </div>
 
-=======
-    <p>Marca: <i>{{efecto.marca}}</i><p>
-    <p>Modelo: <i>{{efecto.modelo}}</i><p>
-    <p>Serial: <i>{{efecto.serial}}</i><p>
-    <p>Año: <i>{{efecto.anio}}</i><p>
-    <p>Precio: <i>{{efecto.precio}}</i><p>
-    <p>Descripción: <i>{{efecto.descripcion}}</i><p>
-    <p>Email de contacto: <i>{{efecto.email_contacto}}</i><p>
-    <p>
-        <a href="{% url "ListaEfectos" %}">Regresar</a>
-    <p/>
->>>>>>> rama_miercoles_nico
 
 {% endblock main %}
