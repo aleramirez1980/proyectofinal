@@ -2,18 +2,52 @@
 
 {% load static %}
 
-{% block title %} Eléctrica Detalle {% endblock title %}
+
 
 {% block main %}
 
-    <p>Marca: <i>{{electrica.marca}}</i><p>
-    <p>Modelo: <i>{{electrica.modelo}}</i><p>
-    <p>Serial: <i>{{electrica.serial}}</i><p>
-    <p>Año: <i>{{electrica.anio}}</i><p>
-    <p>Precio: <i>{{electrica.precio}}</i><p>
-    <p>Descripción: <i>{{electrica.descripcion}}</i><p>
-    <p>
-        <a href="{% url "ListaElectricas" %}">Regresar</a>
-    <p/>
+
+    
+    <div class="container my-5">
+        <div class="row justify-content-center">
+
+         
+
+            <div class="card" style="width: 18rem;">
+
+               
+                <h5 class= 'text-center'>Eléctrica - Detalles</5>
+
+
+                    <figure class="figure text-center" >
+                        <img src="{{ electrica.imagen.url }}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                    </figure>
+                <div class="card-body">
+                    <h5 class="card-title"><p>Marca:{{electrica.marca}}<p></h5>
+                    <p>Descripción: <i>{{electrica.descripcion}}</i><p>  
+                        
+                </div>
+
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item"><p>Modelo: <i>{{electrica.modelo}}</i><p></li>
+                <li class="list-group-item"><p>Serial: <i>{{electrica.serial}}</i><p></li>
+                <li class="list-group-item"><p>Año: <i>{{electrica.anio}}</i><p></li>
+                <li class="list-group-item"><p>Precio: <i>{{electrica.precio}}</i><p></li>
+                <li class="list-group-item"><p>Publicada por: <i>{{electrica.creado_por}} el {{electrica.fecha_hora}}</i><p></li>
+                
+            
+
+                </ul>
+
+                <div class="card-body">
+
+                    <a href="{% url "ListaElectricas" %}">Regresar</a>
+                   
+                
+                </div>
+            </div>
+        </div>    
+    </div>
+
 
 {% endblock main %}

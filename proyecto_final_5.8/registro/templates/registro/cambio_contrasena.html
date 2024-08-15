@@ -1,0 +1,36 @@
+{% extends 'app/index.html' %}
+
+{% load static %}
+
+{% block editar_contrasena %}
+
+
+
+   
+       
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    
+                    <h2>Editar Contraseña</h2>
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </form>
+                
+                </div>
+            </div>
+        </div>
+  
+
+
+
+
+
+
+
+
+{% endblock editar_contrasena %}
+

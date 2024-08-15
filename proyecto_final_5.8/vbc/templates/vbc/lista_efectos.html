@@ -2,16 +2,91 @@
 
 {% load static %}
 
-{% block title %} Listado Efectos {% endblock title %}
 
 {% block main %}
 
+{% block title %} 
+
+<div class="container-sm text-center">
+    <h2>Listado Efectos</h2>
+    {% if user.is_authenticated %}
+      <a href="{% url 'NuevoEfecto' %}" class="btn btn-primary">Nuevo efecto</a>
+    {% endif %}
+</div>
+
+
+{% endblock title %}
+
+
+{% if Efectos %}
+
     {% for efecto in Efectos %}
-            <p>Efecto: {{efecto.marca}}, {{efecto.modelo}}, {{efecto.serial}}
-            <a href="{% url "DetalleEfecto" efecto.pk %}">Ver</a>
-            |
-            <a href="{% url "EditarEfecto" efecto.pk %}">Editar</a>
-            |
-            <a href="{% url "BorrarEfecto" efecto.pk %}">Borrar</a>          
+            
+
+                       
+            <div class="container-md mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Efecto: {{efecto.marca}}, {{efecto.modelo}}, {{efecto.serial}}</h5>
+                    </div>
+                    <div class="card-body">
+                      
+
+                      <div class="row">
+
+                        <div class="col-2">
+
+
+                    
+                            <figure class="figure">
+                                <img src="{{ efecto.imagen.url }}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                              </figure>
+
+                        </div>
+
+                        <div class="col-10">
+
+                            <h5 class="card-title"><p>Año:{{efecto.anio}}, Precio: {{efecto.precio}} <p></h5>
+                              
+                                <a href="{% url "DetalleEfecto" efecto.pk %}" class="btn btn-primary">Ver</a>
+                                {% if user.is_authenticated and user == efecto.creado_por %}
+                                  |
+                                  <a href="{% url "EditarEfecto" efecto.pk %}" class="btn btn-primary">Editar</a>
+                                  |                                                               
+                                  <a href="{% url "BorrarEfecto" efecto.pk %}" class="btn btn-primary">Borrar</a>
+                                {% endif %}
+
+                                <p>Publicada por: <i>{{efecto.creado_por}} el {{efecto.fecha_hora}}</i><p>
+
+                        </div>
+
+
+
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+
     {% endfor %}
+
+{% else %}
+
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+      <div class="col-lg-6">
+          
+          <h2>No existe ninguna efecto registrado aún!  </h2>
+
+      
+      </div>
+  </div>
+</div>
+
+
+{% endif %}
+
+
 {% endblock main %}

@@ -2,16 +2,98 @@
 
 {% load static %}
 
-{% block title %} Listado Amplificadores {% endblock title %}
-
 {% block main %}
 
+{% block title %}  
+
+<div class="container-sm text-center">
+    <h2>Listado Amplificadores</h2>
+    {% if user.is_authenticated %}
+      <a href="{% url 'NuevoAmplificador' %}" class="btn btn-primary">Nuevo amplificador</a>
+    {% endif %}
+</div>
+
+
+{% endblock title %}
+
+
+{% if Amplificadores%}
+
     {% for amplificador in Amplificadores %}
-            <p>Amplificador: {{amplificador.marca}}, {{amplificador.modelo}}, {{amplificador.serial}}
-            <a href="{% url "DetalleAmplificador" amplificador.pk %}">Ver</a>
-            |
-            <a href="{% url "EditarAmplificador" amplificador.pk %}">Editar</a>
-            |
-            <a href="{% url "BorrarAmplificador" amplificador.pk %}">Borrar</a>          
+                 
+            
+            <div class="container-md mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Amplificador: {{amplificador.marca}}, {{amplificador.modelo}}, {{amplificador.serial}}</h5>
+                    </div>
+                    <div class="card-body">
+                      
+
+                      <div class="row">
+
+                        <div class="col-2">
+
+
+                    
+                            <figure class="figure">
+                                <img src="{{ amplificador.imagen.url }}" class="figure-img img-fluid rounded" width="200" height="200" alt="...">
+                              </figure>
+
+                        </div>
+
+                        <div class="col-10">
+
+                            <h5 class="card-title"><p>Año:{{amplificador.anio}}, Precio: {{amplificador.precio}} <p></h5>
+                                
+                                <a href="{% url "DetalleAmplificador" amplificador.pk %}" class="btn btn-primary">Ver</a>
+                                {% if user.is_authenticated and user == amplificador.creado_por %}
+                                  |
+                                  <a href="{% url "EditarAmplificador" amplificador.pk %}" class="btn btn-primary">Editar</a>
+                                  |                                                               
+                                  <a href="{% url "BorrarAmplificador" amplificador.pk %}" class="btn btn-primary">Borrar</a>
+                                {% endif %}
+
+                                <p>Publicada por: <i>{{amplificador.creado_por}} el {{amplificador.fecha_hora}}</i><p>
+
+                        </div>
+
+
+
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+
     {% endfor %}
+
+    {% else %}
+
+
+    <div class="container my-5">
+      <div class="row justify-content-center">
+          <div class="col-lg-6">
+              
+              <h2>No existe ningun amplificador registrado aún!  </h2>
+    
+          
+          </div>
+      </div>
+    </div>
+    
+    
+    {% endif %}
+    
+
+
+
+
+
+
+
+
+
+
 {% endblock main %}

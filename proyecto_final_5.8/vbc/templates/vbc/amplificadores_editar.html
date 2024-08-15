@@ -2,14 +2,26 @@
 
 {% load static %}
 
-{% block title %} Editar Amplificador {% endblock title %}
+
 
 {% block main %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            
+            <h2>Editar Amplificador </h2>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Editar">
-</form>
+                
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit" class="btn btn-primary">Editar</button>
+                </form>
+              
+        
+        </div>
+    </div>
+</div>
+
 
 {% endblock main %}

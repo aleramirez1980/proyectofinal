@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
@@ -98,9 +99,9 @@ LOGIN_URL = "/users/login"
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -126,4 +127,4 @@ MESSAGE_TAGS = {
 }
 
 MEDIA_URL = '/media/'
-MEIDA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
