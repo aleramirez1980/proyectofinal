@@ -139,3 +139,4 @@ class EfectoDeleteView(LoginRequiredMixin, DeleteView):
     model = Efecto
     template_name = "vbc/efectos_borrar.html"
     success_url = reverse_lazy("ListaEfectos")
+

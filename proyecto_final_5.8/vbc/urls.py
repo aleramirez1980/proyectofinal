@@ -25,4 +25,6 @@ urlpatterns = [
     path("efectos/<pk>", views.EfectoDetailView.as_view(), name = "DetalleEfecto"),
     path("efectos/<pk>/editar", views.EfectoUpdateView.as_view(), name = "EditarEfecto"),
     path("efectos/<pk>/borrar", views.EfectoDeleteView.as_view(), name = "BorrarEfecto"),   
+
+
 ]
