@@ -10,7 +10,6 @@ class Electrica(models.Model):
     anio = models.IntegerField(null=True)
     precio = models.IntegerField(null=True)
     descripcion = models.CharField(max_length=200, null=True)
-<<<<<<< HEAD
     fecha_hora= models.DateTimeField(auto_now_add=True)
     creado_por = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) 
     imagen = models.ImageField(upload_to='media/') # Se agrega campo de imagenes. 
@@ -23,10 +22,8 @@ class Electrica(models.Model):
         return f'{self.marca}, {self.modelo}, {self.anio}, creado el  {fecha_format}'
     
     
-=======
     email_contacto = models.EmailField(max_length=50, null=True)
 
->>>>>>> rama_miercoles_nico
 class Acustica(models.Model):
     marca = models.CharField(max_length=50)
     modelo = models.CharField(max_length=50)
@@ -34,7 +31,6 @@ class Acustica(models.Model):
     anio = models.IntegerField(null=True)
     precio = models.IntegerField(null=True)
     descripcion = models.CharField(max_length=200, null=True)
-<<<<<<< HEAD
     fecha_hora= models.DateTimeField(auto_now_add=True)
     creado_por = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) 
     imagen = models.ImageField(upload_to='media/')
@@ -42,9 +38,7 @@ class Acustica(models.Model):
     def __str__(self):
         fecha_format = self.fecha_hora.strftime('%Y-%m-%d %H:%M:%S')
         return f'{self.marca}, {self.modelo}, {self.anio}, creado el  {fecha_format}'
-=======
     email_contacto = models.EmailField(max_length=50, null=True)
->>>>>>> rama_miercoles_nico
 
 class Amplificador(models.Model):
     marca = models.CharField(max_length=50)
@@ -53,7 +47,6 @@ class Amplificador(models.Model):
     serial = models.IntegerField(null=True)
     anio = models.IntegerField(null=True)
     precio = models.IntegerField(null=True)
-<<<<<<< HEAD
     descripcion = models.CharField(max_length=200, null=True) 
     fecha_hora= models.DateTimeField(auto_now_add=True)
     creado_por = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) 
@@ -62,10 +55,8 @@ class Amplificador(models.Model):
     def __str__(self):
         fecha_format = self.fecha_hora.strftime('%Y-%m-%d %H:%M:%S')
         return f'{self.marca}, {self.modelo}, {self.anio}, creado el  {fecha_format}'
-=======
     descripcion = models.CharField(max_length=200, null=True)
     email_contacto = models.EmailField(max_length=50, null=True)
->>>>>>> rama_miercoles_nico
     
 class Efecto(models.Model):
     marca = models.CharField(max_length=50)
@@ -73,7 +64,6 @@ class Efecto(models.Model):
     serial = models.IntegerField(null=True)
     anio = models.IntegerField(null=True)
     precio = models.IntegerField(null=True)
-<<<<<<< HEAD
     descripcion = models.CharField(max_length=200, null=True)  
     fecha_hora= models.DateTimeField(auto_now_add=True)
     creado_por = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True) 
@@ -82,7 +72,5 @@ class Efecto(models.Model):
     def __str__(self):
        fecha_format = self.fecha_hora.strftime('%Y-%m-%d %H:%M:%S')
        return f'{self.marca}, {self.modelo}, {self.anio}, creado el  {fecha_format}'
-=======
     descripcion = models.CharField(max_length=200, null=True)
     email_contacto = models.EmailField(max_length=50, null=True)   
->>>>>>> rama_miercoles_nico
